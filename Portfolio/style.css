@@ -1,0 +1,328 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: red;
+  color: black;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: #111;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar .logo {
+  color: red;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a i {
+  color: white;
+  width: 20px;
+}
+
+.sidebar nav ul li.active a,
+.sidebar nav ul li a:hover {
+  background-color: red;
+  color: black;
+}
+
+.content {
+  margin-left: 240px;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.hidden + .content {
+  margin-left: 0;
+}
+
+.section {
+  margin-bottom: 80px;
+  scroll-margin-top: 70px;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: red;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.welcome-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text {
+  flex: 1 1 60%;
+}
+.welcome-text h1 {
+  flex: 1 1 60%;
+  color: red;
+}
+.welcome-text p1 {
+  flex: 1 1 60%;
+  font-size: x-small;
+}
+.welcome-photo {
+  flex: 1 1 35%;
+  text-align: right;
+}
+
+.welcome-photo img {
+  width: 100%;
+  max-width: 300px;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.resume-btn {
+  background-color: red;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 240px;
+  width: calc(100% - 240px);
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.hidden ~ footer {
+  left: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .toggle-btn {
+    top: 15px;
+    left: 15px;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .sidebar.hidden + .content,
+  .sidebar.show + .content {
+    margin-left: 0;
+  }
+
+  footer {
+    left: 0;
+    width: 100%;
+  }
+}
+/* Contact Section */
+.contact {
+  padding: 60px 20px;
+  color: white;
+}
+
+.section-heading {
+  font-size: 28px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.contact-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  color: red;
+  margin-right: 10px;
+  width: 25px;
+  text-align: center;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: red;
+}
+/* Portfolio Section */
+.portfolio {
+  padding: 60px 20px;
+  color: white;
+}
+
+.portfolio .project {
+  margin-bottom: 40px;
+  border: 1px solid #444;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #111;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.portfolio .project h3 {
+  font-size: 24px;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.portfolio .project p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.portfolio .project ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.portfolio .project li {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+/* About Section */
+#about {
+  padding: 60px 20px;
+  color: white;
+}
+
+#about p, #about ul {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+#about ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #cc0000;
+}
+/* Services Section */
+#services {
+  padding: 60px 20px;
+  color: white;
+}
+
+#services .service {
+  margin-bottom: 30px;
+  background-color: #111;
+  border: 1px solid #444;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+#services .service h3 {
+  color: red;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#services .service p, 
+#services .service ul {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-left: 10px;
+}
+
+#services .service ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}

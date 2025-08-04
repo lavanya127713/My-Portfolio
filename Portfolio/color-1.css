@@ -1,0 +1,19 @@
+/* Theme: Red accents */
+
+.resume-btn {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.sidebar nav ul li.active a,
+.sidebar nav ul li a:hover {
+  background-color: red;
+  color: black;
+}
